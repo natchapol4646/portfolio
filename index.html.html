@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ณัชพล มงคลธนกุล | Natchapol Mongkolthanakul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600;700&family=Sarabun:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16233D;
+  --ink-soft:#5A6478;
+  --paper:#F7F8FA;
+  --card:#FFFFFF;
+  --rule:#C9D0DC;
+  --rule-soft:#E4E8EF;
+  --brass:#A8802C;
+  --form-blue:#2C5AA0;
+  --wide:1040px;
+  --serif:"Noto Serif Thai",Georgia,serif;
+  --sans:"Sarabun",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:400;font-size:16.5px;line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wide);margin:0 auto;padding:0 24px}
+
+/* ---------- หัวเว็บ ---------- */
+.masthead{border-bottom:1px solid var(--rule);background:var(--card)}
+.masthead-in{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;padding:26px 24px 20px;max-width:var(--wide);margin:0 auto}
+.sitename{font-family:var(--serif);font-weight:700;font-size:29px;letter-spacing:-.01em;margin:0;line-height:1.15}
+.sitename span{display:block;font-family:var(--sans);font-weight:300;font-size:15px;color:var(--ink-soft);letter-spacing:.02em}
+.seal{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);text-align:right;line-height:1.5}
+.seal b{display:block;color:var(--brass);font-weight:500;letter-spacing:.09em}
+
+/* ---------- เมนู ---------- */
+nav{position:sticky;top:0;z-index:30;background:var(--ink);border-bottom:3px solid var(--brass)}
+.nav-in{max-width:var(--wide);margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+nav button{
+  flex:0 0 auto;background:none;border:0;border-right:1px solid rgba(255,255,255,.13);
+  color:#C8D2E4;font-family:var(--sans);font-size:14.5px;padding:13px 20px;cursor:pointer;
+  white-space:nowrap;transition:background .15s,color .15s;
+}
+nav button .en{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;opacity:.55;margin-top:1px}
+nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+nav button[aria-current="true"]{background:var(--brass);color:#1B1200}
+nav button[aria-current="true"] .en{opacity:.7}
+nav button:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+
+/* ---------- หน้า ---------- */
+.page{display:none;padding:44px 0 72px}
+.page.active{display:block;animation:rise .32s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 6px}
+.eyebrow i{font-family:var(--serif);font-style:normal;font-size:15px;color:var(--brass);
+  border:1px solid var(--brass);border-radius:50%;width:27px;height:27px;
+  display:grid;place-items:center;flex:0 0 auto}
+.eyebrow span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+h2.title{font-family:var(--serif);font-weight:600;font-size:31px;margin:0 0 4px;line-height:1.3}
+.title-en{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 26px}
+.lede{font-size:17px;color:var(--ink-soft);max-width:62ch;margin:0 0 30px}
+
+h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:34px 0 10px}
+h3 em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase;margin-left:8px}
+p{margin:0 0 14px}
+a{color:var(--form-blue)}
+
+/* ---------- แถบเทียบรอบปี ---------- */
+.hero{background:var(--card);border:1px solid var(--rule);padding:30px 28px 26px;margin-bottom:34px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:26px;margin:0 0 6px;line-height:1.35}
+.hero .sub{color:var(--ink-soft);margin:0 0 26px;max-width:58ch}
+
+.ruler{--cols:15;margin-top:8px}
+.months{display:grid;grid-template-columns:repeat(var(--cols),1fr);font-family:var(--mono);
+  font-size:9.5px;color:var(--ink-soft);letter-spacing:.04em;border-bottom:1px solid var(--rule);padding-bottom:5px}
+.months div{text-align:center}
+.months div.q{color:var(--brass);font-weight:500}
+.band{display:grid;grid-template-columns:repeat(var(--cols),1fr);align-items:center;margin-top:9px;position:relative}
+.bar{grid-row:1;height:31px;display:flex;align-items:center;padding:0 12px;font-size:13px;color:#fff;
+  white-space:nowrap;overflow:hidden;transform-origin:left;animation:grow .7s cubic-bezier(.2,.8,.3,1) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.bar b{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.06em;margin-right:9px;opacity:.75}
+.bar.fiscal{grid-column:1/13;background:var(--ink)}
+.bar.calendar{grid-column:4/16;background:var(--form-blue);animation-delay:.16s}
+.today{position:absolute;top:-16px;bottom:-6px;width:2px;background:var(--brass);z-index:2}
+.ruler-note{font-size:13.5px;color:var(--ink-soft);margin-top:26px;padding-top:14px;border-top:1px dashed var(--rule)}
+.ruler-note b{font-family:var(--mono);font-weight:500;font-size:12.5px;color:var(--ink)}
+
+/* ---------- การ์ดรายปี ---------- */
+.years{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.ycard{background:var(--card);padding:22px;display:flex;flex-direction:column;gap:8px;
+  text-decoration:none;color:inherit;transition:background .18s}
+.ycard:hover{background:#F2F5FA}
+.ycard .fy{font-family:var(--mono);font-size:26px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.ycard .fy small{font-size:11px;letter-spacing:.1em;color:var(--ink-soft);display:block;margin-top:2px}
+.ycard .role{font-size:14px;color:var(--ink-soft);line-height:1.6;flex:1}
+.ycard .go{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--form-blue)}
+.ycard.now{border-left:3px solid var(--brass)}
+.ycard.now .fy{color:var(--brass)}
+
+/* ---------- ลิงก์ลัด ---------- */
+.quick{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0;
+  border-top:1px solid var(--rule);margin-top:38px}
+.quick button{display:flex;align-items:baseline;gap:12px;text-align:left;background:none;border:0;
+  border-bottom:1px solid var(--rule-soft);padding:15px 4px;cursor:pointer;font-family:var(--sans);
+  font-size:15.5px;color:var(--ink);width:100%;transition:padding-left .18s,color .18s}
+.quick button:hover{padding-left:12px;color:var(--form-blue)}
+.quick button i{font-family:var(--mono);font-style:normal;font-size:11px;color:var(--brass);letter-spacing:.08em}
+.quick button u{text-decoration:none;font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);
+  letter-spacing:.08em;text-transform:uppercase;margin-left:auto}
+
+/* ---------- บล็อกทั่วไป ---------- */
+.slab{background:var(--card);border:1px solid var(--rule);padding:24px 26px;margin-bottom:18px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:18px}
+.field{display:grid;grid-template-columns:118px 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--rule-soft);font-size:15px}
+.field dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding-top:5px}
+.field dd{margin:0}
+dl{margin:0}
+.ph{color:#94A0B4;background:#EEF2F8;border-bottom:1px dotted #94A0B4;padding:0 4px}
+
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:6px 0 18px}
+th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);
+  text-align:left;font-weight:500;padding:9px 12px;border-bottom:2px solid var(--ink)}
+td{padding:11px 12px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+tr:hover td{background:#F2F5FA}
+
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:9px 0 9px 20px;border-bottom:1px solid var(--rule-soft);position:relative;font-size:15px}
+ul.plain li::before{content:"—";position:absolute;left:0;color:var(--brass)}
+
+/* ---------- ตัวสลับปีงบประมาณ ---------- */
+.fyswitch{display:flex;gap:0;border:1px solid var(--rule);background:var(--card);overflow-x:auto;margin-bottom:22px}
+.fyswitch button{flex:1 0 auto;background:none;border:0;border-right:1px solid var(--rule-soft);
+  padding:14px 22px;cursor:pointer;font-family:var(--mono);font-size:14px;color:var(--ink-soft);transition:.15s}
+.fyswitch button small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:0;margin-top:2px;opacity:.8}
+.fyswitch button:hover{background:#F2F5FA;color:var(--ink)}
+.fyswitch button[aria-current="true"]{background:var(--ink);color:#fff}
+.fypanel{display:none}
+.fypanel.active{display:block;animation:rise .26s ease both}
+
+.entry{border-left:2px solid var(--rule);padding:2px 0 2px 20px;margin-bottom:26px}
+.entry .meta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:3px}
+.entry h4{font-family:var(--serif);font-size:17.5px;font-weight:600;margin:0 0 6px;line-height:1.45}
+.entry h4 small{display:block;font-family:var(--sans);font-weight:400;font-size:15px;color:var(--form-blue);margin-top:3px}
+.entry p{font-size:15px;color:var(--ink-soft);margin:0}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+  border:1px solid var(--rule);padding:2px 8px;margin:8px 6px 0 0;color:var(--ink-soft)}
+.tag.done{border-color:var(--brass);color:var(--brass)}
+
+.embed{background:#EEF2F8;border:1px dashed var(--rule);padding:34px 20px;text-align:center;
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-soft);margin-bottom:18px}
+
+/* ---------- แถบรูปเส้นเวลา ---------- */
+.tl-track{display:flex;overflow-x:auto;padding-bottom:16px;scroll-snap-type:x proximity;
+  scrollbar-width:thin;scrollbar-color:var(--rule) transparent}
+.tl-track::-webkit-scrollbar{height:6px}
+.tl-track::-webkit-scrollbar-thumb{background:var(--rule)}
+.tl-item{flex:0 0 208px;scroll-snap-align:start;padding:0 16px;border-left:1px solid var(--rule-soft)}
+.tl-item:first-child{padding-left:0;border-left:0}
+.tl-year{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;
+  font-weight:500;letter-spacing:.08em;color:var(--brass);margin-bottom:9px}
+.tl-year::after{content:"";flex:1;height:1px;background:var(--rule)}
+.tl-frame{position:relative;aspect-ratio:4/5;background:#EEF2F8;border:1px solid var(--rule);
+  display:grid;place-items:center;margin-bottom:10px;overflow:hidden}
+.tl-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tl-frame .slot{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:#94A0B4;
+  text-align:center;padding:0 14px;line-height:1.8}
+.tl-cap{font-size:14.5px;line-height:1.55}
+.tl-cap small{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:2px}
+.tl-item.now .tl-frame{border-color:var(--brass);border-width:2px}
+
+/* ---------- อยู่ระหว่างปรับปรุง ---------- */
+.wip{display:inline-block;vertical-align:middle;font-family:var(--mono);font-size:10px;
+  letter-spacing:.09em;text-transform:uppercase;background:var(--brass);color:#fff;
+  padding:3px 9px;margin-left:10px;white-space:nowrap}
+.wip.nav{background:none;color:var(--brass);border:1px solid var(--brass);margin-left:8px;
+  padding:1px 6px;font-size:9px}
+.wipnote{background:repeating-linear-gradient(135deg,#F6EAD0 0 12px,#F2E3C1 12px 24px);
+  border:1px solid var(--brass);border-left-width:4px;color:#5A4410;
+  padding:14px 18px;margin:0 0 26px;font-size:14.5px;line-height:1.65}
+.wipnote b{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  display:block;margin-bottom:3px}
+.wipnote span{opacity:.85;font-size:13px}
+
+/* ---------- ท้ายเว็บ ---------- */
+footer{border-top:1px solid var(--rule);background:var(--card);padding:26px 0 40px;font-size:13.5px;color:var(--ink-soft)}
+.foot-in{max-width:var(--wide);margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:baseline}
+.counter{font-family:var(--mono);font-size:12px;letter-spacing:.07em;margin-left:auto}
+.counter b{color:var(--ink);font-size:15px}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .sitename{font-size:24px}
+  .seal{margin-left:0;text-align:left}
+  h2.title{font-size:25px}
+  .hero{padding:22px 18px}
+  .months{font-size:7.5px}
+  .bar{font-size:11px;padding:0 7px}
+  .bar b{display:none}
+  .field{grid-template-columns:1fr;gap:0}
+  .field dt{padding-top:0}
+  .counter{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <h1 class="sitename">Natchapol Mongkolthanakul<span>ณัชพล มงคลธนกุล · แฟ้มผลงานส่วนบุคคล</span></h1>
+    <div class="seal">
+      <b>PERSONAL PORTFOLIO</b>
+      กองประเมินผล 1 สำนักงบประมาณ<br>ปรับปรุง ส.ค. 2569
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-in" role="tablist">
+    <button data-page="home" aria-current="true">หน้าแรก<span class="en">Home</span></button>
+    <button data-page="about">เกี่ยวกับฉัน<span class="en">About me</span></button>
+    <button data-page="learn">เรียนรู้<span class="en">Learn</span></button>
+    <button data-page="work">ปฏิบัติงาน<span class="en">Work</span></button>
+    <button data-page="read">เขียน<span class="wip nav">ปรับปรุง</span><span class="en">Read</span></button>
+    <button data-page="listen">บรรยาย<span class="wip nav">ปรับปรุง</span><span class="en">Listen</span></button>
+    <button data-page="share">แบ่งปัน<span class="wip nav">ปรับปรุง</span><span class="en">Share</span></button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ ๑ หน้าแรก ============================ -->
+<section class="page active" id="home">
+  <div class="hero">
+    <h1>งานราชการเดินด้วยปีงบประมาณ<br>ชีวิตเดินด้วยปีปฏิทิน</h1>
+    <div class="ruler">
+      <div class="months">
+        <div class="q">ต.ค.</div><div>พ.ย.</div><div>ธ.ค.</div>
+        <div class="q">ม.ค.</div><div>ก.พ.</div><div>มี.ค.</div>
+        <div>เม.ย.</div><div>พ.ค.</div><div>มิ.ย.</div>
+        <div>ก.ค.</div><div>ส.ค.</div><div>ก.ย.</div>
+        <div class="q">ต.ค.</div><div>พ.ย.</div><div>ธ.ค.</div>
+      </div>
+      <div class="band">
+        <div class="today" style="grid-column:11;justify-self:center"></div>
+        <div class="bar fiscal"><b>FY</b>ปีงบประมาณ 2569 · 1 ต.ค. 68 – 30 ก.ย. 69</div>
+      </div>
+      <div class="band">
+        <div class="bar calendar"><b>CY</b>ปีปฏิทิน 2569 · 1 ม.ค. – 31 ธ.ค.</div>
+      </div>
+      <p class="ruler-note">
+        ขณะนี้อยู่ในเดือนที่ <b>11 จาก 12</b> ของปีงบประมาณ 2569<br>
+        <span style="opacity:.8">The fiscal year runs 1 Oct – 30 Sep, three months ahead of the calendar year.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="eyebrow"><i>๑</i><span>Portfolio by fiscal year</span></div>
+  <h2 class="title">ผลงานรายปีงบประมาณ</h2>
+  <p class="title-en">Performance by fiscal year</p>
+
+  <div class="years">
+    <a class="ycard now" href="#" data-goto="work" data-fy="2569">
+      <span class="fy">2569<small>FY2026 · ปีปัจจุบัน</small></span>
+      <span class="role">รับผิดชอบการติดตามและประเมินผลการใช้จ่ายงบประมาณ</span>
+      <span class="go">ดูผลงาน →</span>
+    </a>
+  </div>
+
+  <div class="quick">
+    <button data-page="about"><i>๒</i>รู้จักฉันเพิ่มเติม<u>About me</u></button>
+    <button data-page="learn"><i>๓</i>ความรู้และการอบรม<u>Learn</u></button>
+    <button data-page="work"><i>๔</i>ผลงาน<u>Work</u></button>
+    <button data-page="read"><i>๕</i>งานเขียนและรายงาน<u>Read</u></button>
+    <button data-page="listen"><i>๖</i>คลิปบรรยายและนำเสนอ<u>Listen</u></button>
+    <button data-page="share"><i>๗</i>เอกสารและสื่อที่แบ่งปัน<u>Share</u></button>
+  </div>
+</section>
+
+<!-- ============ ๒ เกี่ยวกับฉัน ====================== -->
+<section class="page" id="about">
+  <div class="eyebrow"><i>๒</i><span>Section 02</span></div>
+  <h2 class="title">เกี่ยวกับฉัน</h2>
+  <p class="title-en">About me</p>
+
+  <div class="grid2">
+    <div class="slab">
+      <dl>
+        <div class="field">
+          <dt>ชื่อ / Name</dt>
+          <dd>ณัชพล มงคลธนกุล (อาร์ม)<br>
+              <span style="color:var(--ink-soft);font-size:14px">Natchapol Mongkolthanakul</span></dd>
+        </div>
+        <div class="field">
+          <dt>ตำแหน่ง / Position</dt>
+          <dd>นักวิเคราะห์งบประมาณปฏิบัติการ</dd>
+        </div>
+        <div class="field">
+          <dt>สังกัด / Agency</dt>
+          <dd>กองประเมินผล 1 สำนักงบประมาณ</dd>
+        </div>
+        <div class="field">
+          <dt>เริ่มรับราชการ</dt>
+          <dd>เมษายน พ.ศ. 2569</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="slab">
+      <h3 style="margin-top:0">หน้าที่รับผิดชอบ<em>Responsibilities</em></h3>
+      <ul class="plain">
+        <li>ติดตามและประเมินผลการใช้จ่ายงบประมาณของหน่วยรับงบประมาณ</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>เส้นทางตั้งแต่เรียนจนถึงปัจจุบัน<em>From school to today</em></h3>
+  <p style="color:var(--ink-soft);font-size:15px;margin-bottom:18px">เลื่อนดูภาพตามลำดับเวลา</p>
+
+  <div class="tl-track">
+    <div class="tl-item">
+      <div class="tl-year">พ.ศ. 2557</div>
+      <div class="tl-frame">
+        <span class="slot">img/01-primary.jpg</span>
+        <img src="img/01-primary.jpg" alt="สมัยประถมศึกษา" onerror="this.remove()">
+      </div>
+      <div class="tl-cap">ประถมศึกษา <small>โรงเรียนราชวินิต</small></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">พ.ศ. 2560</div>
+      <div class="tl-frame">
+        <span class="slot">img/02-secondary.jpg</span>
+        <img src="img/02-secondary.jpg" alt="สมัยมัธยมศึกษา" onerror="this.remove()">
+      </div>
+      <div class="tl-cap">มัธยมศึกษา <small>โรงเรียนราชวินิต มัธยม</small></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">พ.ศ. 2563</div>
+      <div class="tl-frame">
+        <span class="slot">img/03-vocational.jpg</span>
+        <img src="img/03-vocational.jpg" alt="ประกาศนียบัตรวิชาชีพ" onerror="this.remove()">
+      </div>
+      <div class="tl-cap">ประกาศนียบัตรวิชาชีพ (ปวช.) <small>โรงเรียนจิตรลดาวิชาชีพ สถาบันเทคโนโลยีจิตรลดา</small></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">พ.ศ. 2565</div>
+      <div class="tl-frame">
+        <span class="slot">img/04-high-vocational.jpg</span>
+        <img src="img/04-high-vocational.jpg" alt="ประกาศนียบัตรวิชาชีพชั้นสูง" onerror="this.remove()">
+      </div>
+      <div class="tl-cap">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.) <small>โรงเรียนจิตรลดาวิชาชีพ สถาบันเทคโนโลยีจิตรลดา</small></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">พ.ศ. 2567</div>
+      <div class="tl-frame">
+        <span class="slot">img/05-bachelor.jpg</span>
+        <img src="img/05-bachelor.jpg" alt="รับปริญญาตรี" onerror="this.remove()">
+      </div>
+      <div class="tl-cap">ปริญญาตรี <small>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</small></div>
+    </div>
+    <div class="tl-item now">
+      <div class="tl-year">พ.ศ. 2569</div>
+      <div class="tl-frame">
+        <span class="slot">img/06-today.jpg</span>
+        <a href="https://imgbb.com/"><img src="https://i.ibb.co/gbNxDpnK/ftp-get-img.jpg" alt="ftp get img" border="0"></a>
+      </div>
+      <div class="tl-cap">เริ่มรับราชการ · ปัจจุบัน<small>นักวิเคราะห์งบประมาณปฏิบัติการ สำนักงบประมาณ</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ๓ เรียนรู้ ========================== -->
+<section class="page" id="learn">
+  <div class="eyebrow"><i>๓</i><span>Section 03</span></div>
+  <h2 class="title">เรียนรู้</h2>
+  <p class="title-en">Learn together</p>
+  <p class="lede">องค์ความรู้ที่สั่งสมจากการศึกษา อบรม และการปฏิบัติงานจริง เปิดให้เพื่อนร่วมงานหยิบไปใช้ต่อได้</p>
+  <h3>การศึกษาและการอบรม<em>Education &amp; training</em></h3>
+  <table>
+    <thead>
+      <tr><th style="width:80px">ปี</th><th>หลักสูตร / Course</th><th style="width:170px">หน่วยงานจัด</th><th style="width:110px">เกียรติบัตร</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2569</td>
+        <td>โครงการฝึกอบรมสัมมนาเชิงปฏิบัติการ หลักสูตรการเป็นข้าราชการที่ดี ประจำปีงบประมาณ พ.ศ. 2569</td>
+        <td>สำนักงบประมาณ</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ ๔ ปฏิบัติงาน ======================== -->
+<section class="page" id="work">
+  <div class="eyebrow"><i>๔</i><span>Section 04</span></div>
+  <h2 class="title">ปฏิบัติงาน</h2>
+  <p class="title-en">Work together</p>
+  <p class="lede">ผลงานจำแนกตามปีงบประมาณ เลือกปีที่ต้องการด้านล่าง</p>
+  <div class="fyswitch">
+    <button data-fy="2569" aria-current="true">2569<small>ปีปัจจุบัน</small></button>
+  </div>
+  <div class="fypanel active" data-fy="2569">
+    <div class="entry">
+      <div class="meta">ภารกิจหลัก · ผู้รับผิดชอบหลัก</div>
+      <h4>รายงานการติดตามและประเมินผลสัมฤทธิ์จากการใช้จ่ายงบประมาณโครงการสำคัญ ประจำปีงบประมาณ พ.ศ. 2569
+        <small>โครงการส่งเสริมการท่องเที่ยวสำราญทางน้ำ</small></h4>
+      <p>ครอบคลุมการติดตามและประเมินผลสัมฤทธิ์โครงการส่งเสริมการท่องเที่ยวสำราญทางน้ำในห้วงปีงบประมาณ พ.ศ. 2564–2569
+        ทั้งมิติการพัฒนาโครงสร้างพื้นฐานท่าเทียบเรือและการเสริมทรายชายหาด
+        โดยประเมินผ่านกรอบหลักเกณฑ์สากล (OECD 6 ด้าน) เพื่อนำไปสู่การจัดทำข้อเสนอแนะเชิงนโยบายด้านการจัดสรรงบประมาณ</p>
+      <span class="tag">อยู่ระหว่างดำเนินการ</span><span class="tag">รายงาน 1 ฉบับ</span>
+    </div>
+    <div class="entry">
+      <div class="meta">ภารกิจหลัก · ผู้รับผิดชอบหลัก</div>
+      <h4>รายงานผลสัมฤทธิ์หรือประโยชน์ที่ได้รับจากการใช้จ่ายงบประมาณ โดยเชื่อมโยงยุทธศาสตร์ชาติและแผนแม่บทภายใต้ยุทธศาสตร์ชาติ ประจำปีงบประมาณ พ.ศ. 2569</h4>
+      <p>วิเคราะห์และจัดทำฐานข้อมูลเชื่อมโยงงบประมาณแผ่นดินกับยุทธศาสตร์ชาติ
+        โดยคัดกรองตัวชี้วัดผลลัพธ์และจัดหมวดหมู่เม็ดเงิน เพื่อแสดงทิศทางการลงทุนของภาครัฐอย่างเป็นระบบ</p>
+      <span class="tag done">แล้วเสร็จ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ๕ เขียน ============================= -->
+<section class="page" id="read">
+  <div class="eyebrow"><i>๕</i><span>Section 05</span></div>
+  <h2 class="title">เขียน<span class="wip">อยู่ระหว่างปรับปรุง</span></h2>
+  <p class="title-en">Read what I wrote</p>
+  <div class="wipnote">
+    <b>อยู่ระหว่างปรับปรุง · under construction</b>
+  </div>
+</section>
+
+<!-- ============ ๖ บรรยาย ========================== -->
+<section class="page" id="listen">
+  <div class="eyebrow"><i>๖</i><span>Section 06</span></div>
+  <h2 class="title">บรรยาย<span class="wip">อยู่ระหว่างปรับปรุง</span></h2>
+  <p class="title-en">Listen to what I said</p>
+  <div class="wipnote">
+    <b>อยู่ระหว่างปรับปรุง · under construction</b>
+  </div>
+</section>
+
+<!-- ============ ๗ แบ่งปัน ========================== -->
+<section class="page" id="share">
+  <div class="eyebrow"><i>๗</i><span>Section 07</span></div>
+  <h2 class="title">แบ่งปัน<span class="wip">อยู่ระหว่างปรับปรุง</span></h2>
+  <p class="title-en">Share</p>
+  <div class="wipnote">
+    <b>อยู่ระหว่างปรับปรุง · under construction</b>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <span>ณัชพล มงคลธนกุล · แฟ้มผลงานส่วนบุคคล</span>
+    <span>ปรับปรุงล่าสุด ส.ค. 2569</span>
+    <span class="counter">ผู้เข้าชมตั้งแต่ 1 ต.ค. 2568 · <b id="hits">0000</b></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var navBtns = document.querySelectorAll('nav button');
+  var pages = document.querySelectorAll('.page');
+  var quickBtns = document.querySelectorAll('.quick button');
+
+  function show(id){
+    pages.forEach(function(p){ p.classList.toggle('active', p.id === id); });
+    navBtns.forEach(function(b){ b.setAttribute('aria-current', String(b.dataset.page === id)); });
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  navBtns.forEach(function(el){
+    el.addEventListener('click', function(){ show(el.dataset.page); });
+  });
+  
+  quickBtns.forEach(function(el){
+    el.addEventListener('click', function(){ show(el.dataset.page); });
+  });
+
+  var fyBtns = document.querySelectorAll('.fyswitch button');
+  var fyPanels = document.querySelectorAll('.fypanel');
+  function showFY(fy){
+    fyPanels.forEach(function(p){ p.classList.toggle('active', p.dataset.fy === fy); });
+    fyBtns.forEach(function(b){ b.setAttribute('aria-current', String(b.dataset.fy === fy)); });
+  }
+  fyBtns.forEach(function(b){ b.addEventListener('click', function(){ showFY(b.dataset.fy); }); });
+
+  document.querySelectorAll('.ycard').forEach(function(c){
+    c.addEventListener('click', function(e){
+      e.preventDefault();
+      show(c.dataset.goto);
+      showFY(c.dataset.fy);
+    });
+  });
+})();
+</script>
+</body>
+</html>
